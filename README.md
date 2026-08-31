@@ -13,3 +13,8 @@
 -  **精排重排序 (Rerank)**：引入 BGE Reranker 模型，提升 Top-K 准确率
 -  **智能问答与溯源**：答案生成 + 自动标注引用来源（文件名/段落）
 -  **增量更新机制**：监听笔记变动，自动增量更新向量库（基于 MD5 Hash）
+
+## 命令行
+python -m backend.app.services.build_index 分块和嵌入data目录下的所有笔记
+uvicorn backend.app.main:app --reload --port 8000 启动后端
+streamlit run frontend/app.py 启动前端
